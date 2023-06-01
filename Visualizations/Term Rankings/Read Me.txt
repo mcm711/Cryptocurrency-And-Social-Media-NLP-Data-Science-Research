@@ -1,0 +1,3 @@
+Charts of top 100 most frequently occuring bigrams (two-word phrases) during each segment
+
+The term frequency is denoted in parenthesis
