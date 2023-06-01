@@ -68,22 +68,20 @@ def create_topic_model(df):
         df.at[idx, 'Topic_Model'] = globals()[topic_model_name]
     return df
 
-
-# # topic_model = BERTopic(embedding_model=embedding_model)
-# topics, probs = topic_model.fit_transform(docs)
-# topics_Q3_2020 = topic_model.get_topic_info()
+topics, probs = topic_model.fit_transform(docs)
+topics_Q3_2020 = topic_model.get_topic_info()
 
 
-# topic_model.visualize_topics()
-# topic_model.visualize_barchart(top_n_topics=12)
-# topic_model.visualize_heatmap(n_clusters=20, width=1000, height=1000)
+topic_model.visualize_topics()
+topic_model.visualize_barchart(top_n_topics=12)
+topic_model.visualize_heatmap(n_clusters=20, width=1000, height=1000)
 
-# #update the topic model and reduce the topics
-# topic_model.update_topics(docs, n_gram_range=(1, 2))
-# topic_model.reduce_topics(docs, nr_topics=6)
+#update the topic model and reduce the topics
+topic_model.update_topics(docs, n_gram_range=(1, 2))
+topic_model.reduce_topics(docs, nr_topics=6)
 
-# topic_docs = {topic: [] for topic in set(topics)}
-# for topic, doc in zip(topics, docs):
-#     topic_docs[topic].append(doc)
+topic_docs = {topic: [] for topic in set(topics)}
+for topic, doc in zip(topics, docs):
+     topic_docs[topic].append(doc)
     
     
